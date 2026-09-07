@@ -26,8 +26,6 @@ import org.springframework.boot.jackson.JsonComponent;
 /**
  * Serializes a {@link Vet} for the JSON returned by {@link VetController}, listing each
  * specialty by name rather than as a nested object.
- *
- * @author Arjen Poutsma
  */
 @JsonComponent
 public class VetSerializer extends JsonSerializer<Vet> {
