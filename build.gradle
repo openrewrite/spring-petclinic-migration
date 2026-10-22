@@ -17,7 +17,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation ('org.thymeleaf:thymeleaf-spring4:3.0.15.RELEASE') {
-        force = true
+        version {
+            strictly '3.0.15.RELEASE'
+        }
     }
     implementation ('org.springframework.boot:spring-boot-starter-thymeleaf') {
         exclude(group: 'nz.net.ultraq.thymeleaf', module: 'thymeleaf-layout-dialect')
@@ -45,7 +47,6 @@ dependencies {
 group = 'org.springframework.samples'
 version = '1.5.1'
 description = 'petclinic'
-sourceCompatibility = '11'
 
 publishing {
     publications {
@@ -57,4 +58,9 @@ publishing {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
